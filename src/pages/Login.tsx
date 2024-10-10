@@ -1,0 +1,94 @@
+import { FormEvent, useState } from "react";
+import Input from "../components/Input";
+
+const Login = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: FormEvent) => {
+    e.preventDefault()
+    if (name && email && password) {
+      if (!(password === confirmPassword)) {
+       setError('Your Passwords are not matching') 
+      }
+      else{
+        localStorage.setItem('login', 'true')
+      window.location.href = '/'
+      }
+
+    } else {
+      setError('Please enter your email and password.')
+    }
+  }
+  
+  return (
+    <div>
+      <div className="h-screen">
+        <form onSubmit={handleLogin} className="container  p-6 bg-white">
+          <div className="sm:mx-auto sm:w-full sm:max-w-md">
+            <img
+              className="mx-auto h-10 w-auto"
+              src="https://baitussalam.org/images/logo-2.svg"
+              alt="Your Company"
+            />
+          </div>
+          <h2 className="text-3xl font-semibold mb-4 text-center">Login</h2>
+          <div className="container">
+            <Input
+              type="text"
+              label="Your Name"
+              value={name}
+              name="name"
+              placeholder="Your Name"
+              onChange={(e) => setName(e.target.value)}
+              error={error}
+              
+            />
+
+            <Input
+              type="email"
+              label="Email Address"
+              value={email}
+              name="email"
+              placeholder="Enter your email"
+              onChange={(e) => setEmail(e.target.value)}
+              error={error}
+            />
+
+            <Input
+              type="password"
+              label="Password"
+              value={password}
+              name="password"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+              error={error}
+            />
+
+            <Input
+              type="password"
+              label="Confirm Password"
+              value={confirmPassword}
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              error={error}
+            />
+
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-11/12"
+            >
+                Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
