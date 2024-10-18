@@ -41,7 +41,7 @@ const Cart = () => {
                       alt={item.title}
                     />
                     <div>
-                      <h2 className="text-lg font-semibold text-gray-800">
+                      <h2 className="text-sm sm:text-lg font-semibold text-gray-800">
                         {item.title}
                       </h2>
                       <p className="text-sm text-gray-500">

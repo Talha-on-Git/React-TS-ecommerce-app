@@ -26,16 +26,16 @@ const SignUp = () => {
   
   return (
     <div className="flex">
-      <div className="w-1/2 h-screen">
-        <form onSubmit={handleSignUp} className="container mx-6 p-6 bg-white">
+      <div className="w-full lg:w-1/2 h-screen">
+        <form onSubmit={handleSignUp} className="container  p-8 bg-white">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
             <img
               className="mx-auto h-10 w-auto"
-              src="https://baitussalam.org/images/logo-2.svg"
+              src="https://psdc-react-ecommerce-app.netlify.app/react.svg"
               alt="Your Company"
             />
           </div>
-          <h2 className="text-3xl font-semibold mb-4 text-center">Sign Up For Your Account</h2>
+          <h2 className="text-3xl font-semibold my-4 text-center">Sign Up For Your Account</h2>
           <div className="container">
             <Input
               type="text"
@@ -80,7 +80,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-11/12"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
             >
               Sign Up
             </button>

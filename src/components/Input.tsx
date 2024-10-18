@@ -29,7 +29,7 @@ const Input: React.FC<Input> = ({
         {label}
       </label>
       <input
-        className={`border text-slate-700 border-gray-300 shadow-sm mx-auto rounded-lg w-11/12 py-3 px-3 mb-3  placeholder-gray-500 text-base outline-blue-300 ${
+        className={`border text-slate-700 border-gray-300 shadow-sm mx-auto rounded-lg w-full py-3 px-3 mb-3  placeholder-gray-500 text-base outline-blue-300 ${
           error && 'ring-2 ring-red-200'
         }`}
         type={type}

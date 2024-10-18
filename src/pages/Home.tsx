@@ -8,7 +8,7 @@ const Home = () => {
   const fetchProducts = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
-    console.log("data", data);
+    // console.log("data", data);
     setProducts(data)
   };
 
