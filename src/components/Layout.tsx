@@ -15,7 +15,7 @@ const Layout = () => {
       <Outlet />
       </main>
       <Footer
-      title='Bait-us-Salam'
+      title='Talha Yousuf'
       text='Shop Today!'
       description='Coded with 💙 by Talha Yousuf'
       />

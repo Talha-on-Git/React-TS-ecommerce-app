@@ -7,7 +7,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ title, text, description }) => {
-  const imageUrl = "https://baitussalam.org/images/logo-2.svg";
+  const imageUrl = "https://psdc-react-ecommerce-app.netlify.app/react.svg";
 
   return (
     <div className="relative z-50 bg-[#191F33]">

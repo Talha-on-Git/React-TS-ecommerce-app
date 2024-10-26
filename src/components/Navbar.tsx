@@ -6,7 +6,6 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
-    // Toggle the showNavbar state
     setShowNavbar(!showNavbar);
   };
 
@@ -21,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-gray-800 h-12 lg:h-16 lg:py-5 relative">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-start px-4">
         <a
-          href="https://baitussalam.org/tech-park"
+          href="/"
           className="flex items-center gap-3"
         >
           <img
@@ -81,6 +80,7 @@ const Navbar = () => {
                 <NavLink
                   to={link}
                   className="relative p-2 text-lg font-medium text-white transition-all duration-300 ease-in-out hover:text-blue-400 sm:text-base"
+                  onClick={() => setShowNavbar(false)}
                 >
                   {title}
                   <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:w-full"></span>

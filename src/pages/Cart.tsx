@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../state/store";
-import { removeFromCart, clearCart } from "../state/cartSlice/cartSlice";
+import { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from "../state/cartSlice/cartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -11,12 +11,12 @@ const Cart = () => {
   };
 
   const handleClearCart = () => {
-    dispatch(clearCart())
-  }
+    dispatch(clearCart());
+  };
 
   const calculateTotalPrice = () => {
     return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,0
+      (total, item) => total + item.price * item.quantity, 0
     );
   };
 
@@ -47,6 +47,23 @@ const Cart = () => {
                       <p className="text-sm text-gray-500">
                         ${item.price.toFixed(2)}
                       </p>
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() => dispatch(decreaseQuantity(item.id))}
+                          className="px-2 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+                        >
+                          -
+                        </button>
+                        <span className="text-gray-800 font-semibold">
+                          x {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => dispatch(increaseQuantity(item.id))}
+                          className="px-2 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <button
@@ -60,6 +77,12 @@ const Cart = () => {
             )}
           </div>
         </div>
+        <button
+        className="mt-4 w-full rounded bg-blue-500 hover:bg-blue-600 px-4 py-2 text-white"
+        onClick={handleClearCart}
+      >
+        Clear Cart
+      </button>
         <div className="w-full lg:w-1/4">
           <div className="rounded-lg border border-gray-200 bg-white p-6">
             <h2 className="mb-4 text-xl font-bold text-gray-800">Summary</h2>
@@ -85,12 +108,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <button
-              className="mt-4 w-full rounded bg-blue-500 hover:bg-blue-600 px-4 py-2 text-white"
-              onClick={handleClearCart}
-            >
-              Clear Cart
-            </button>
+      
     </div>
   );
 };
