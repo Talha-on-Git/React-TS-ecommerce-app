@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# 🛍️ ViteCommerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive eCommerce web application built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.  
+It features user authentication, product browsing, and a fully functional shopping cart with live total calculations.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** [e-commerce-app-delta-beryl.vercel.app](https://e-commerce-app-delta-beryl.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- 🔐 **User Authentication** — signup and login verification system  
+- 🛒 **Shopping Cart** — add, subtract, or delete products and view total with shipping  
+- 🧾 **Mock API Integration** — displays product data dynamically on the home page  
+- 🧩 **Responsive Design** — optimized for all screen sizes  
+- ⚡ **Fast Build** — powered by Vite for lightning-fast development  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
+- **Frontend:** React (TypeScript)  
+- **Styling:** Tailwind CSS  
+- **Build Tool:** Vite  
+- **Data Source:** Mock API (e.g., Fake Store API or local JSON)  
+- **Hosting:** Vercel  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📖 How It Works
+1. **Signup/Login:**  
+   Users can register or log in. The system checks if a user already exists before creating a new one.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. **Product Display:**  
+   Products are fetched from a mock API and rendered dynamically in categorized sections on the homepage.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. **Cart Functionality:**  
+   Users can add or remove products, update quantities, and view their total including shipping charges — all updated in real-time.
+
+---
+
+## 🧩 Future Enhancements
+- Connect authentication to a backend (Node.js + MongoDB)  
+- Implement payment gateway integration  
+- Add product filtering and search  
+
